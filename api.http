@@ -1,0 +1,63 @@
+//Criando um evento
+POST http://localhost:3333/api/v1/events
+Content-Type: application/json
+
+{
+	"title": "um evento de teste 2",
+	"details": "Caraca",
+	"maximumAttendees": null,
+	"local": "altamira",
+	"price": 50
+}
+
+###
+//Criando um participante
+POST http://localhost:3333/api/v1/events/36e674a7-2553-4674-87c9-1be0734c208c/attendees
+Content-Type: application/json
+
+{
+	"name": "alefe teste",
+	"email": "alefefelipebiondesmagalhaes@gmail.com",
+	"password": "arroz2018",
+	"phone": "96991695334",
+	"age": 22,
+	"sex": "masculino",
+	"shirtSize": "G",
+	"eventQuantity": 5,
+	"corporation":"esparta"
+}
+
+###
+//Logando um participante
+POST http://localhost:3333/api/v1/sessions
+Content-Type: application/json
+
+{
+  "email": "itu@gmail.com",
+  "password": "arroz2018"
+}
+
+###
+//Buscando um evento
+GET  http://localhost:3333/api/v1/events/be36aef9-95bb-4e16-8172-156154b330b9?status=
+
+
+###
+//Buscando dados de um participante pelo id - precisa estar logado
+GET  http://localhost:3333/api/v1/attendees/1/badge
+
+###
+//Fazendo check-in de um participante pelo id
+GET  http://localhost:3333/api/v1/attendees/14/check-in
+
+###
+//Buscando todos os participantes de um evento - precisa estar logado
+GET  http://localhost:3333/api/v1/events/be36aef9-95bb-4e16-8172-156154b330b9/attendees
+
+###
+//Buscando todos os eventos
+GET http://localhost:3333/api/v1/events/all
+
+###
+//Buscando todos os pedidos
+GET http://localhost:3333/api/v1/order/all
